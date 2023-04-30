@@ -9533,6 +9533,8 @@
         <Actors>
           <Character ActorFlags="FindOrSpawn" ActorName="148 GENERIC Gurubani Kaur" ActorTask="" ActorTraits="" FunctionTags="" HideWarnings="" Optional="" TargetEnclave="" />
           <Enclave ActorFlags="" ActorName="Home" EnclaveStat="" HideWarnings="" Optional="" />
+          <Character ActorFlags="FindOrSpawn" ActorName="149 GENERIC Milo Eldridge" ActorTask="" ActorTraits="" FunctionTags="" HideWarnings="" Optional="" TargetEnclave="" />
+          <Enclave ActorFlags="" ActorName="Home" EnclaveStat="" HideWarnings="" Optional="" />
         </Actors>
         <Alts />
         <Effects />
@@ -9540,6 +9542,8 @@
         <Outputs>
           <Actor_JoinEnclave ActorIndex="0" EnclaveIndex="1" />
           <Actor_AddToFamily ActorIndex="0" />
+          <Actor_AddTrust ActorIndex="1" DisableBonus="false" Trust="100" /> <!-- MAKE IT PLAYABLE -->
+          <Actor_AddTrust ActorIndex="2" DisableBonus="false" Trust="100" /> <!-- MAKE IT PLAYABLE -->
           <EventLog DisplayType="EventBanner" EventFlags="" Icon="" IconId="">
             <NameText Flags="" Notes="" Text="Gurubani Kaur" />
             <TutorialText Flags="" Notes="" Text="" />
@@ -9553,13 +9557,25 @@
             <NpcEffects />
           </EventLog>
           <EventLog DisplayType="EventBanner" EventFlags="" Icon="" IconId="">
+            <NameText Flags="" Notes="" Text="Milo Eldridge" />
+            <TutorialText Flags="" Notes="" Text="" />
+            <DescArgs />
+            <Descriptions>
+              <EventLogDesc>
+                <DescriptionText Flags="" Notes="" Text="I really don't know about this guy. He says he's out here looking for his brother, and he's willing to trade his expertise with explosives for a place to stay. But I'm not sure I'm on board with a guy carrying a pack full of pipe bombs ..." />
+                <SummaryText Flags="" Notes="" Text="We let a creepy dude into the base." />
+              </EventLogDesc>
+            </Descriptions>
+            <NpcEffects />
+          </EventLog>
+          <EventLog DisplayType="EventBanner" EventFlags="" Icon="" IconId="">
             <NameText Flags="" Notes="" Text="Supplies Delivered" />
             <TutorialText Flags="" Notes="" Text="" />
             <DescArgs />
             <Descriptions>
               <EventLogDesc>
-                <DescriptionText Flags="" Notes="" Text="Gurubani added 4 Food, 4 Medicine, and 60 rounds of 7.62mm ammunition to our Supply Locker." />
-                <SummaryText Flags="" Notes="" Text="Food, Medicine, and Ammo" />
+                <DescriptionText Flags="" Notes="" Text="Gurubani added 4 Food, 4 Medicine, and 60 rounds of .45cal ammunition to our Supply Locker. Milo added 4 Ammo, 4 Fuel, and more pipe bombs than we know what to do with." />
+                <SummaryText Flags="" Notes="" Text="Food, Medicine, and Ammo, Fuel, and Pipe Bombs" />
               </EventLogDesc>
             </Descriptions>
             <NpcEffects />
@@ -9568,6 +9584,10 @@
           <RTSStat_Add DurationCancellable="" OutputAmount="4" OutputDuration="" OutputId="Stockpile.Medicine" PauseWhenOffline="" />
           <Enclave_Give AmmoPercentage="100" Count="60" EnclaveIndex="1" GiveFlags="" Name="AmmoBullet45cal" />
           <RTSStat_SetBool DurationCancellable="" OutputAmount="true" OutputDuration="" OutputId="YOSE.Delivered.Gurubani" PauseWhenOffline="" />
+          <RTSStat_Add DurationCancellable="" OutputAmount="4" OutputDuration="" OutputId="Stockpile.Ammo" PauseWhenOffline="" />
+          <RTSStat_Add DurationCancellable="" OutputAmount="4" OutputDuration="" OutputId="Stockpile.Fuel" PauseWhenOffline="" />
+          <Enclave_Give AmmoPercentage="100" Count="15" EnclaveIndex="1" GiveFlags="" Name="Grenade_PipeBomb_Strong" />
+          <RTSStat_SetBool DurationCancellable="" OutputAmount="true" OutputDuration="" OutputId="YOSE.Delivered.Milo" PauseWhenOffline="" />
         </Outputs>
       </Action>
     </Actions>
